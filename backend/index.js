@@ -1,6 +1,7 @@
 import express from "express"
 import userRoutes from "./routes/user.js"
 import authRoutes from "./routes/auth.js"
+import postRoutes from "./routes/posts.js"
 import cookieParser from "cookie-parser";
 import cors from "cors"
 
@@ -18,6 +19,7 @@ app.use(cookieParser())
 app.use(express.json())
 app.use("/auth",authRoutes)
 app.use("/user",userRoutes)
+app.use("/posts",postRoutes)
 app.listen("8800",()=>{
     console.log("backend connected")
 })
